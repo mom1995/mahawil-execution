@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مديرية تنفيذ قضاء المحاويل</title>
+<meta name="description" content="الموقع الرسمي لمديرية تنفيذ قضاء المحاويل - دائرة التنفيذ - وزارة العدل العراقية">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- عند تعديل styles.css أو script.js غيّر رقم v ليحصل الزوار على النسخة الجديدة مباشرة -->
+<link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+
+<!-- شريط علوي -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-info">
+      <span>🇮🇶 جمهورية العراق — وزارة العدل — دائرة التنفيذ</span>
+      <span class="hide-sm" id="today"></span>
+    </div>
+    <div class="topbar-tools">
+      <button class="tool-btn" id="fontDown" aria-label="تصغير الخط">ا-</button>
+      <button class="tool-btn" id="fontUp" aria-label="تكبير الخط">ا+</button>
+      <button class="tool-btn" id="themeToggle" aria-label="تبديل الوضع الليلي">🌙</button>
+    </div>
+  </div>
+</div>
+
+<!-- الترويسة -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#home" class="brand">
+      <span class="brand-logo"><img src="assets/logo.jpg" alt="شعار وزارة العدل العراقية"></span>
+      <span class="brand-text">
+        <small class="b-country">جمهورية العراق</small>
+        <strong>وزارة العدل</strong>
+        <span class="b-unit">دائرة التنفيذ / مديرية تنفيذ قضاء المحاويل</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#about">عن المديرية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#inquiry">الاستعلام الإلكتروني</a>
+      <a href="#guide">دليل المراجع</a>
+      <a href="#news">الأخبار</a>
+      <a href="#auctions">المزايدات</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main>
+<!-- البطل -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <div class="grid-pattern"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-text reveal">
+      <div class="gov-head">
+        <span class="g1">جمهورية العراق</span>
+        <span class="g2">وزارة العدل</span>
+        <h1 class="g3">دائرة التنفيذ / مديرية تنفيذ قضاء المحاويل</h1>
+      </div>
+      <p class="lead" id="typed">تنفيذ الأحكام والقرارات القضائية والسندات التنفيذية بكفاءة وشفافية، وضمان حقوق المواطنين.</p>
+      <div class="hero-actions">
+        <a href="#inquiry" class="btn btn-gold">🔎 استعلم عن إضبارتك</a>
+        <a href="#services" class="btn btn-ghost">استعرض الخدمات</a>
+      </div>
+      <div class="hero-badges">
+        <div><b>⏱</b> الدوام: الأحد – الخميس | 8:30 ص – 2:00 م</div>
+        <div><b>📍</b> بابل – المحاويل – حي 17 تموز</div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="glass">
+        <h3>خدمات سريعة</h3>
+        <div class="quick-grid">
+          <a href="#inquiry" class="quick"><i>📂</i><span>البحث عن إضبارة</span></a>
+          <a href="#guide" class="quick"><i>📝</i><span>فتح إضبارة جديدة</span></a>
+          <a href="#guide" class="quick"><i>💳</i><span>بطاقة الماستر كارد</span></a>
+          <a href="#auctions" class="quick"><i>🏷️</i><span>المزايدات العلنية</span></a>
+          <a href="#complaint" class="quick"><i>📣</i><span>شكوى / مقترح</span></a>
+          <a href="#contact" class="quick"><i>☎️</i><span>تواصل معنا</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#stats" class="scroll-hint" aria-label="انتقل للأسفل"><span></span></a>
+</section>
+
+<!-- شريط الأخبار العاجلة -->
+<div class="ticker">
+  <div class="ticker-label">آخر الإعلانات</div>
+  <div class="ticker-track"><div class="ticker-move" id="tickerMove"></div></div>
+</div>
+
+<!-- إحصائيات -->
+<section class="stats" id="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal"><i>👥</i><b class="count" data-to="5100" data-suffix="+">0</b><span>متابع على فيسبوك</span></div>
+    <div class="stat reveal"><i>🏛️</i><b class="count" data-to="12">0</b><span>خدمة تنفيذية</span></div>
+    <div class="stat reveal"><i>📅</i><b class="count" data-to="5">0</b><span>أيام دوام أسبوعياً</span></div>
+    <div class="stat reveal"><i>⚖️</i><b class="count" data-to="45">0</b><span>قانون التنفيذ رقم (45) لسنة 1980</span></div>
+  </div>
+</section>
+
+<!-- عن المديرية -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">من نحن</span>
+      <h2>عن مديرية تنفيذ المحاويل</h2>
+      <p>إحدى مديريات دائرة التنفيذ في وزارة العدل العراقية، تعمل ضمن رقعة محافظة بابل لخدمة أهالي قضاء المحاويل والنواحي التابعة له.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="t1">نبذة</button>
+          <button class="tab" data-tab="t2">رؤيتنا</button>
+          <button class="tab" data-tab="t3">رسالتنا</button>
+          <button class="tab" data-tab="t4">مهامنا</button>
+        </div>
+        <div class="tab-panel active" id="t1">
+          <p>تتولى المديرية تنفيذ الأحكام والقرارات الصادرة عن المحاكم، والمحررات والسندات التنفيذية، وفقاً لأحكام <strong>قانون التنفيذ رقم (45) لسنة 1980</strong> وتعديلاته، من خلال كادر متخصص يعمل بإشراف المنفذ العدل.</p>
+          <p>وعبر صفحتنا الرسمية على فيسبوك ننشر كل تعليمات وزارة العدل / دائرة التنفيذ، ونجيب عن استفسارات المواطنين، وننشر الإعلانات المهمة.</p>
+          <p>نسعى إلى تبسيط الإجراءات وتقليل مدة إنجاز المعاملات، مع الحفاظ على حقوق الدائن والمدين على حد سواء.</p>
+        </div>
+        <div class="tab-panel" id="t2"><p>أن تكون مديرية تنفيذ المحاويل نموذجاً رائداً في سرعة تنفيذ الأحكام القضائية وجودة الخدمة المقدمة للمواطن، معتمدةً على التحول الرقمي والشفافية.</p></div>
+        <div class="tab-panel" id="t3"><p>إيصال الحقوق إلى أصحابها بأسرع وقت وأيسر إجراء، عبر تطبيق القانون بعدالة وحياد، وتقديم خدمة تحترم وقت المواطن وكرامته.</p></div>
+        <div class="tab-panel" id="t4">
+          <ul class="check-list">
+            <li>تنفيذ الأحكام والقرارات القضائية الصادرة عن المحاكم.</li>
+            <li>تنفيذ أحكام النفقة وحضانة ومشاهدة الأطفال.</li>
+            <li>تنفيذ السندات والمحررات التنفيذية والكمبيالات.</li>
+            <li>إيقاع الحجز على الأموال المنقولة وغير المنقولة وبيعها بالمزايدة العلنية.</li>
+            <li>إصدار قرارات منع السفر والحبس التنفيذي وفق القانون.</li>
+            <li>استيفاء المبالغ وإيصالها إلى مستحقيها.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="manager-card">
+          <img class="avatar" src="assets/director.jpg" alt="المنفذ العدل ختام شريف محمد">
+          <div>
+            <span class="muted">كلمة مديرة المديرية</span>
+            <blockquote>«نضع خدمة المواطن في مقدمة أولوياتنا، وأبوابنا مفتوحة لكل مراجع، ونعمل على أن يحصل كل ذي حق على حقه بعدالة ويسر.»</blockquote>
+            <strong>المنفذ العدل ختام شريف محمد</strong>
+            <small class="role">مديرة مديرية تنفيذ المحاويل</small>
+          </div>
+        </div>
+        <div class="values">
+          <div class="value"><i>🛡️</i><b>النزاهة</b></div>
+          <div class="value"><i>⚡</i><b>السرعة</b></div>
+          <div class="value"><i>🔍</i><b>الشفافية</b></div>
+          <div class="value"><i>🤝</i><b>الاحترام</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الخدمات -->
+<section class="section alt" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">ماذا نقدم</span>
+      <h2>خدماتنا</h2>
+      <p>اختر الخدمة لمعرفة تفاصيلها والمستمسكات المطلوبة.</p>
+    </div>
+    <div class="filter-bar reveal">
+      <button class="chip active" data-filter="all">الكل</button>
+      <button class="chip" data-filter="family">أحوال شخصية</button>
+      <button class="chip" data-filter="money">مالية ودين</button>
+      <button class="chip" data-filter="property">أموال وعقارات</button>
+      <button class="chip" data-filter="admin">إدارية</button>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- الاستعلام الإلكتروني -->
+<section class="section" id="inquiry">
+  <div class="container inquiry-wrap">
+    <div class="inquiry-info reveal">
+      <span class="kicker">خدمة إلكترونية</span>
+      <h2>البحث عن رقم الإضبارة</h2>
+      <p>نسيت رقم إضبارتك؟ أدخل اسم الدائن أو اسم المدين لمعرفة رقم الإضبارة وسنتها، وهما مطلوبان عند التقديم على بطاقة الماستر كارد وعند المراجعة.</p>
+      <ul class="check-list">
+        <li>متاح على مدار الساعة</li>
+        <li>البحث باسم الدائن أو باسم المدين</li>
+        <li>يظهر رقم الإضبارة وسنتها ونوع القرار</li>
+      </ul>
+      <p class="note">🔒 حفاظاً على الخصوصية: اكتب الاسم الثلاثي أو الرباعي كاملاً كما هو في الإضبارة، ولا تظهر في النتيجة أي بيانات شخصية.</p>
+      <p class="note" id="demoNote" hidden>عرض تجريبي: جرّب الاسم <b>محمد علي حسن</b>.</p>
+    </div>
+    <form class="card inquiry-form reveal" id="inquiryForm" novalidate>
+      <div class="field">
+        <span class="label">البحث حسب</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="role" value="creditor" checked><span>اسم الدائن</span></label>
+          <label><input type="radio" name="role" value="debtor"><span>اسم المدين</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="personName" id="nameLabel">اسم الدائن (ثلاثي أو رباعي)</label>
+        <input id="personName" autocomplete="off" placeholder="مثال: محمد علي حسن" required>
+      </div>
+      <button class="btn btn-primary full" type="submit"><span class="btn-label">بحث</span><span class="spinner"></span></button>
+      <div class="result" id="inquiryResult" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- دليل المراجع -->
+<section class="section alt" id="guide">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">خطوة بخطوة</span>
+      <h2>دليل المراجع</h2>
+      <p>مراحل سير المعاملة التنفيذية من التقديم حتى الاستيفاء.</p>
+    </div>
+    <div class="timeline">
+      <div class="step reveal"><span class="num">1</span><div><h4>تقديم الطلب</h4><p>يقدم الدائن طلب التنفيذ مرفقاً بالحكم أو السند التنفيذي الأصلي والمستمسكات الثبوتية.</p></div></div>
+      <div class="step reveal"><span class="num">2</span><div><h4>فتح الإضبارة</h4><p>تسجيل الطلب وفتح إضبارة تنفيذية برقم خاص واستيفاء الرسوم القانونية.</p></div></div>
+      <div class="step step-card reveal"><span class="num">3</span><div>
+        <h4>التقديم على بطاقة الماستر كارد <span class="badge ok">بطاقة خير — المصرف الزراعي</span></h4>
+        <p>بعد فتح الإضبارة يتقدّم الدائن أو وكيله بطلب إصدار بطاقة الماستر كارد (بطاقة خير) من المصرف الزراعي، لاستلام المبالغ المستوفاة عليها إلكترونياً دون الحاجة لمراجعة المديرية في كل مرة.</p>
+        <div class="card-step">
+          <div class="bank-card-wrap" aria-hidden="true">
+            <div class="bank-card back"><span class="stripe"></span><span class="sig"></span></div>
+            <div class="bank-card front">
+              <div class="bc-top"><span class="bc-bank">المصرف الزراعي<small>AGRICULTURAL BANK</small></span><span class="bc-leaf">🌾</span></div>
+              <span class="bc-chip"></span>
+              <span class="bc-num">•••• •••• •••• ••••</span>
+              <div class="bc-bottom"><span>CARD HOLDER NAME</span><span class="bc-mc"><i></i><i></i></span></div>
+            </div>
+            <div class="bc-title"><b>المصرف الزراعي</b><span>بطاقة خير</span></div>
+          </div>
+          <div class="docs-grid">
+            <div class="docs">
+              <h5>👤 إذا كان المتقدّم هو الدائن</h5>
+              <ul class="check-list">
+                <li>البطاقة الوطنية الموحدة</li>
+                <li>بطاقة السكن</li>
+                <li>رقم الهاتف</li>
+                <li>رقم الإضبارة وسنتها</li>
+                <li>نوع القرار</li>
+              </ul>
+            </div>
+            <div class="docs">
+              <h5>⚖️ إذا كان المتقدّم محامياً</h5>
+              <ul class="check-list">
+                <li>البطاقة الوطنية الموحدة</li>
+                <li>بطاقة السكن</li>
+                <li>هوية نقابة المحامين</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <div class="step reveal"><span class="num">4</span><div><h4>تبليغ المدين</h4><p>تبليغ المدين بالإخطار التنفيذي ومنحه المدة القانونية لتنفيذ الالتزام طوعاً.</p></div></div>
+      <div class="step reveal"><span class="num">5</span><div><h4>الإجراءات التنفيذية</h4><p>عند عدم التنفيذ الطوعي يُصار إلى الحجز أو منع السفر أو غيرها من الإجراءات وفق القانون.</p></div></div>
+      <div class="step reveal"><span class="num">6</span><div><h4>الاستيفاء وغلق الإضبارة</h4><p>تحصيل المبلغ وإيداعه على بطاقة الماستر كارد الخاصة بالدائن، ثم غلق الإضبارة بعد تمام التنفيذ.</p></div></div>
+    </div>
+
+    <h3 class="sub-title reveal">الأسئلة الشائعة</h3>
+    <div class="faq" id="faq">
+      <details class="reveal"><summary>ما المستمسكات المطلوبة لفتح إضبارة تنفيذية؟</summary><p>الحكم أو السند التنفيذي الأصلي مكتسب الدرجة القطعية (حسب نوعه)، البطاقة الوطنية الموحدة أو هوية الأحوال المدنية وشهادة الجنسية، بطاقة السكن، وصورة منها، مع عنوان المدين بشكل واضح.</p></details>
+      <details class="reveal"><summary>هل يمكن توكيل محامٍ لمتابعة الإضبارة؟</summary><p>نعم، يمكن للمحامي متابعة الإضبارة بموجب وكالة رسمية مصدقة.</p></details>
+      <details class="reveal"><summary>كيف أستلم مبلغ النفقة أو الدين؟</summary><p>بعد إيداع المبلغ من قبل المدين أو استقطاعه من راتبه، يُحوَّل إلى بطاقة الماستر كارد (بطاقة خير — المصرف الزراعي) الخاصة بالدائن. لذلك يجب التقديم على البطاقة بعد فتح الإضبارة مباشرة.</p></details>
+      <details class="reveal"><summary>ما هي أوقات الدوام الرسمي؟</summary><p>من الأحد إلى الخميس، من الساعة 8:30 صباحاً حتى 2:00 ظهراً. الجمعة والسبت عطلة، إضافة إلى العطل الرسمية.</p></details>
+      <details class="reveal"><summary>كيف أتقدم بشكوى؟</summary><p>يمكنك تقديم الشكوى عبر نموذج الشكاوى في هذا الموقع، أو مراجعة شعبة الشكاوى في المديرية مباشرة.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- الأخبار -->
+<section class="section" id="news">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">المركز الإعلامي</span>
+      <h2>أخبار ونشاطات المديرية</h2>
+      <p>تابع آخر النشاطات والإعلانات، وتابعنا على صفحتنا الرسمية في فيسبوك.</p>
+    </div>
+    <div class="sync-status reveal" id="syncStatus"></div>
+    <div class="news-layout">
+      <div class="news-grid" id="newsGrid"></div>
+      <div class="fb-embed reveal">
+        <div class="fb-head"><span>📘 آخر منشورات الصفحة</span><small>تحديث تلقائي من فيسبوك</small></div>
+        <div class="fb-fallback">
+          <span class="fb-ico">f</span>
+          <b>مديرية تنفيذ قضاء المحاويل</b>
+          <small>الصفحة الرسمية — أكثر من 5.1 ألف متابع</small>
+          <div class="fb-actions">
+            <button type="button" class="btn btn-primary fb-toggle" id="fbToggle">عرض المنشورات هنا</button>
+            <a class="btn btn-fb" href="https://www.facebook.com/executionalmahawil" target="_blank" rel="noopener">فتح الصفحة على فيسبوك</a>
+          </div>
+        </div>
+        <iframe title="منشورات صفحة مديرية تنفيذ المحاويل" allow="encrypted-media" id="fbFrame"></iframe>
+        <button type="button" class="fb-close" id="fbClose">إخفاء المنشورات ▲</button>
+      </div>
+    </div>
+    <div class="center reveal">
+      <a class="btn btn-fb" href="https://www.facebook.com/executionalmahawil/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg>
+        زوروا صفحتنا على فيسبوك
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- المزايدات -->
+<section class="section alt" id="auctions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">إعلانات البيع</span>
+      <h2>المزايدات العلنية</h2>
+      <p>إعلانات بيع الأموال المحجوزة بالمزايدة العلنية وفق قانون التنفيذ.</p>
+    </div>
+    <div class="auction-notice card reveal">
+      <i>🏷️</i>
+      <div>
+        <h4>إعلانات المزايدات تُنشر على صفحتنا الرسمية</h4>
+        <p>تُعلن المديرية مواعيد بيع الأموال المحجوزة بالمزايدة العلنية وشروط المشاركة والتأمينات المطلوبة عبر صفحتها الرسمية على فيسبوك. للاستفسار عن مزايدة معينة يرجى مراجعة المديرية خلال أوقات الدوام.</p>
+      </div>
+      <a class="btn btn-fb" href="https://www.facebook.com/executionalmahawil" target="_blank" rel="noopener">متابعة الإعلانات</a>
+    </div>
+  </div>
+</section>
+
+<!-- الشكاوى -->
+<section class="section" id="complaint">
+  <div class="container complaint-wrap">
+    <div class="reveal">
+      <span class="kicker">صوتك مسموع</span>
+      <h2>الشكاوى والمقترحات</h2>
+      <p>نرحب بملاحظاتكم ومقترحاتكم لتطوير العمل، ونتعامل مع جميع الشكاوى بسرية تامة.</p>
+      <div class="rating">
+        <span>قيّم خدمتنا:</span>
+        <div class="stars" id="stars">
+          <button data-v="1">★</button><button data-v="2">★</button><button data-v="3">★</button><button data-v="4">★</button><button data-v="5">★</button>
+        </div>
+        <small id="ratingMsg"></small>
+      </div>
+    </div>
+    <form class="card reveal" id="complaintForm" novalidate>
+      <div class="row2">
+        <div class="field"><label for="cName">الاسم الكامل</label><input id="cName" required></div>
+        <div class="field"><label for="cPhone">رقم الهاتف</label><input id="cPhone" inputmode="tel" placeholder="07xxxxxxxxx" required></div>
+      </div>
+      <div class="field"><label for="cKind">نوع الرسالة</label>
+        <select id="cKind"><option>شكوى</option><option>مقترح</option><option>استفسار</option><option>شكر وتقدير</option></select>
+      </div>
+      <div class="field"><label for="cMsg">نص الرسالة</label><textarea id="cMsg" rows="4" maxlength="600" required></textarea><small class="counter" id="cCount">0 / 600</small></div>
+      <div class="hp" aria-hidden="true"><label for="cWebsite">اتركه فارغاً</label><input id="cWebsite" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary full" type="submit"><span class="btn-label">إرسال</span><span class="spinner"></span></button>
+      <p class="form-note" id="cNote">🔒 تصل رسالتك إلى إدارة المديرية فقط، ولا تُنشر.</p>
+      <div class="result" id="cResult" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- اتصل بنا -->
+<section class="section alt" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">نحن بخدمتك</span>
+      <h2>اتصل بنا</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <a class="ccard link reveal" href="https://maps.app.goo.gl/QxXbMfENvLvLtTxH8" target="_blank" rel="noopener"><i>📍</i><div><b>العنوان</b><span>بابل – المحاويل – حي 17 تموز، شارع روضة المحاويل قرب مركز شباب المحاويل</span></div></a>
+        <div class="ccard reveal"><i>🕗</i><div><b>أوقات الدوام</b><span>الأحد – الخميس | 8:30 ص – 2:00 م<br>الجمعة والسبت عطلة</span></div></div>
+        <a class="ccard link reveal" href="https://m.me/executionalmahawil" target="_blank" rel="noopener"><i>💬</i><div><b>الاستفسارات</b><span>راسلونا عبر ماسنجر صفحة المديرية</span></div></a>
+        <a class="ccard link reveal" href="https://www.facebook.com/executionalmahawil/" target="_blank" rel="noopener"><i>📘</i><div><b>فيسبوك</b><span>مديرية تنفيذ قضاء المحاويل</span></div></a>
+        <a class="ccard link reveal" href="https://moj.gov.iq/" target="_blank" rel="noopener"><i>🏛️</i><div><b>وزارة العدل</b><span>moj.gov.iq</span></div></a>
+      </div>
+      <div class="map reveal">
+        <iframe title="موقع مديرية تنفيذ المحاويل" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=44.3962%2C32.6481%2C44.4102%2C32.6561&amp;layer=mapnik&amp;marker=32.6521195%2C44.4031753"></iframe>
+        <a class="btn btn-primary map-btn" href="https://maps.app.goo.gl/QxXbMfENvLvLtTxH8" target="_blank" rel="noopener">🧭 الاتجاهات عبر خرائط Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand light">
+        <span class="brand-logo"><img src="assets/logo.jpg" alt="شعار وزارة العدل العراقية"></span>
+        <span class="brand-text"><small class="b-country">جمهورية العراق</small><strong>وزارة العدل</strong><span class="b-unit">دائرة التنفيذ / مديرية تنفيذ قضاء المحاويل</span></span>
+      </div>
+      <p>نعمل على تنفيذ الأحكام القضائية بعدالة وشفافية لضمان حقوق المواطنين.</p>
+    </div>
+    <div><h5>روابط سريعة</h5><a href="#about">عن المديرية</a><a href="#services">الخدمات</a><a href="#inquiry">الاستعلام</a><a href="#guide">دليل المراجع</a></div>
+    <div><h5>روابط مهمة</h5><a href="https://moj.gov.iq/" target="_blank" rel="noopener">وزارة العدل العراقية</a><a href="https://www.facebook.com/executionalmahawil/" target="_blank" rel="noopener">صفحة المديرية</a><a href="#complaint">الشكاوى</a>
+      <h5 style="margin-top:14px">وزارة العدل على المنصات</h5>
+      <div class="socials">
+        <a href="https://twitter.com/moj_iq" target="_blank" rel="noopener" title="X / تويتر">𝕏</a>
+        <a href="https://www.instagram.com/iq_moj/" target="_blank" rel="noopener" title="انستغرام">📷</a>
+        <a href="https://t.me/moj_iq" target="_blank" rel="noopener" title="تلغرام">✈️</a>
+        <a href="https://www.youtube.com/@iq_moj" target="_blank" rel="noopener" title="يوتيوب">▶</a>
+        <a href="https://www.threads.net/@iq_moj" target="_blank" rel="noopener" title="ثريدز">@</a>
+      </div>
+    </div>
+    <div><h5>النشرة البريدية</h5><p>اشترك ليصلك جديد الإعلانات.</p><form class="newsletter" id="newsletter"><input type="email" placeholder="بريدك الإلكتروني" required><button class="btn btn-gold">اشتراك</button></form></div>
+  </div>
+  <div class="copy container">
+    <div>© <span id="year"></span> جمهورية العراق — وزارة العدل — دائرة التنفيذ / مديرية تنفيذ قضاء المحاويل — جميع الحقوق محفوظة</div>
+    <div class="credit">تصميم المهندس <b>محمد قاسم العزاوي</b> <span class="beta">نسخة تجريبية</span></div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="العودة للأعلى">↑</button>
+<div class="toast" id="toast"></div>
+
+<!-- نافذة تفاصيل الخدمة -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js?v=9"></script>
+</body>
+</html>

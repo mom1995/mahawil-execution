@@ -1,0 +1,9 @@
+# رمز فيسبوك
+fb-token.php
+
+# ملفات بيانات المواطنين: لا تُرفع إلى GitHub أبداً
+*.accdb
+*.mdb
+*.laccdb
+*.csv
+tools/sources.json
